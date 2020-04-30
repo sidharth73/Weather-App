@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, length=device-length, ">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Weather App</title>
+	<style>
+		body{
+			background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+			text-align: center;
+		}
+    .sid{
+      color: black;
+    }
+    h1{
+      margin-bottom: 30px;
+    }
+    #kishan{
+      display: block;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    button{
+      display: block;
+    }
+    p{
+      display: block;
+    }
+	</style>
+</head>
+<body>
+     <div class="sid">
+	<h1>Weather App</h1>
+   <form action="{{ url_for('hello') }}" method="post">
+
+
+<div class="input-group input-group-sm mb-3" id="kishan">
+  <div class="input-group-prepend">
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="name" placeholder="Enter the City Name" id="ip">
+</div>
+</div>
+
+   	
+   	<button class="btn btn-light mb-3">Submit</button>
+   </form>
+   <h2>Weather of {{ city_name }}</h2>
+   <h4>Temperature (in °C) = {{ current_temperature }}</h4>
+   <h4>Atmospheric Pressure (in hPa unit) = {{ current_pressure }}</h4>
+   <h4>Humidity (in percentage) = {{ current_humidity }}%</h4>
+   <h4>Description = {{ weather_description }}</h4>
+</body>
+</html>
